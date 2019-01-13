@@ -1,4 +1,4 @@
-import trie from "trie-prefix-tree";
+import trie = require("trie-prefix-tree");
 
 // Instantiate the Trie
 const test = trie(["cat", "cats", "dogs", "elephant", "tiger"]);

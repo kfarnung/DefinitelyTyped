@@ -4,9 +4,7 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
 
-export default function Trie(
-    strings: string[]
-): {
+interface Trie {
     /**
      * Get a string representation of the trie
      */
@@ -18,11 +16,11 @@ export default function Trie(
     /**
      * Add a new word to the trie
      */
-    addWord(word: string): ReturnType<typeof Trie>;
+    addWord(word: string): Trie;
     /**
      * Remove an existing word from the trie
      */
-    removeWord(word: string): ReturnType<typeof Trie>;
+    removeWord(word: string): Trie;
     /**
      * Check a prefix is valid
      * @returns Boolean
@@ -63,4 +61,8 @@ export default function Trie(
      * @returns Array
      */
     getSubAnagrams(word: string): string[];
-};
+}
+
+declare function trie(strings: string[]): Trie;
+
+export = trie;
